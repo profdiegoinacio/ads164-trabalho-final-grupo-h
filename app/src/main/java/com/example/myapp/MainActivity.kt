@@ -36,7 +36,7 @@ fun MyApp() {
             ThirdScreen(navController, severity, viewModel)
         }
         composable("confirmationScreen") {
-            ConfirmationScreen(viewModel)
+            ConfirmationScreen(viewModel, navController)
         }
     }
 }
