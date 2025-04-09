@@ -25,7 +25,7 @@ fun SecondScreen(navController: NavController, viewModel: SecondViewModel = view
     Box(
         modifier = Modifier
             .fillMaxSize()
-            .background(Color(0xFFE1F5FE))
+            .background(Color(0xFFE0F2F7))
             .padding(16.dp)
     ) {
         Column(

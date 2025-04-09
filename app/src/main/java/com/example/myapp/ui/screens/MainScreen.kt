@@ -27,7 +27,7 @@ fun MainScreen(navController: NavController, viewModel: MainViewModel = viewMode
     Box(
         modifier = Modifier
             .fillMaxSize()
-            .background(Color(0xFFBBDEFB))
+            .background(Color(0xFFE0F2F7))
             .padding(16.dp),
         contentAlignment = Alignment.Center
     ) {
@@ -58,7 +58,7 @@ fun TitleText(text: String) {
 fun PrimaryButton(text: String, onClick: () -> Unit) {
     Button(
         onClick = onClick,
-        colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF0D47A1)),
+        colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF1976D2)),
         modifier = Modifier
             .fillMaxWidth(0.7f)
             .height(60.dp)

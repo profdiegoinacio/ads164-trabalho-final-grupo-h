@@ -16,6 +16,7 @@ import androidx.navigation.NavController
 import com.example.myapp.viewmodel.ProblemaViewModel
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 
 @Composable
@@ -28,33 +29,46 @@ fun ConfirmationScreen(
     Box(
         modifier = Modifier
             .fillMaxSize()
-            .background(Color(0xFFE3F2FD))
+            .background(Color(0xFFE0F2F7))
             .padding(16.dp),
         contentAlignment = Alignment.Center
     ) {
         Column(horizontalAlignment = Alignment.CenterHorizontally) {
             Text(
                 text = "Seu reporte está em análise!",
-                fontSize = 22.sp,
-                color = MaterialTheme.colorScheme.primary,
+                fontSize = 24.sp,
+                fontWeight = FontWeight.Bold,
+                color = Color(0xFF1976D2),
                 textAlign = TextAlign.Center
             )
             Spacer(modifier = Modifier.height(24.dp))
 
             ultimoProblema?.let { problema ->
-                Text("Gravidade: ${problema.gravidade}")
-                Text("Descrição: ${problema.descricao}")
-                Text("Localização: ${problema.latitude}, ${problema.longitude}")
+                Text(
+                    text = "Gravidade: ${problema.gravidade}",
+                    fontSize = 18.sp,
+                    color = Color(0xFF303F9F)
+                )
+                Text(
+                    text = "Descrição: ${problema.descricao}",
+                    fontSize = 18.sp,
+                    color = Color(0xFF303F9F)
+                )
+                Text(
+                    text = "Localização: ${problema.latitude}, ${problema.longitude}",
+                    fontSize = 16.sp,
+                    color = Color(0xFF303F9F)
+                )
             }
 
             Spacer(modifier = Modifier.height(32.dp))
 
             Button(onClick = {
                 navController.navigate("mainScreen") {
-                    popUpTo("mainScreen") { inclusive = true } 
+                    popUpTo("mainScreen") { inclusive = true }
                 }
             }) {
-                Text("Voltar para o Início")
+                Text("Voltar para o Início", color = Color.White)
             }
         }
     }

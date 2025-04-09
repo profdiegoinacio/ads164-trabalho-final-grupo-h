@@ -42,7 +42,7 @@ fun ThirdScreen(navController: NavController, severity: String, viewModel: Probl
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(Color(0xFFBBDEFB))
+            .background(Color(0xFFE0F2F7))
             .padding(16.dp),
         verticalArrangement = Arrangement.SpaceBetween
     ) {
@@ -61,7 +61,7 @@ fun TitleSection() {
         text = "Marque a localização do problema",
         fontSize = 30.sp,
         fontWeight = FontWeight.Bold,
-        color = Color(0xFF6200EE),
+        color = Color(0xFF0D47A1),
         textAlign = TextAlign.Center,
         modifier = Modifier
             .fillMaxWidth()
@@ -80,7 +80,7 @@ fun MapSection(onLocationSelected: (Double, Double) -> Unit) {
             MapView(context).apply {
                 setTileSource(TileSourceFactory.MAPNIK)
                 setMultiTouchControls(true)
-                controller.setZoom(18.5) // Aumentei o zoom para 18.5 (exemplo)
+                controller.setZoom(18.5) //
                 controller.setCenter(GeoPoint(-28.2628, -52.4064)) // Passo Fundo - RS
 
                 setOnTouchListener { _, _ ->
@@ -111,7 +111,7 @@ fun DescriptionSection(description: String, onDescriptionChanged: (String) -> Un
             .padding(top = 8.dp, bottom = 16.dp),
         shape = RoundedCornerShape(12.dp),
         colors = OutlinedTextFieldDefaults.colors(
-            focusedBorderColor = Color(0xFF6200EE),
+            focusedBorderColor = Color(0xFF1976D2),
             unfocusedBorderColor = Color.Gray,
             disabledBorderColor = Color.LightGray
         )
@@ -135,13 +135,13 @@ fun ButtonSection(
     ) {
         Button(
             onClick = { navController.popBackStack() },
-            colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF6200EE)),
+            colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF64B5F6)),
             shape = RoundedCornerShape(12.dp),
             modifier = Modifier
                 .height(50.dp)
                 .fillMaxWidth(0.4f)
         ) {
-            Text("Voltar", color = Color.White)
+            Text("Voltar", color = Color.Black)
         }
         Button(
             onClick = {
@@ -157,7 +157,7 @@ fun ButtonSection(
                     Toast.makeText(context, "Preencha todos os dados", Toast.LENGTH_SHORT).show()
                 }
             },
-            colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF03DAC5)),
+            colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF1976D2)),
             shape = RoundedCornerShape(12.dp),
             modifier = Modifier
                 .height(50.dp)
